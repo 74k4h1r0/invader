@@ -6,7 +6,7 @@ public class EnemyBulletController : MonoBehaviour
 {
     GameObject EnemyS;
     PlayerDirector playerDirector;
-    float speed = -0.001f;
+    float speed = -1f;
     public AudioClip PlayerdethSound;
     public void Start()
     {
@@ -19,7 +19,7 @@ public class EnemyBulletController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        transform.Translate(0,this.speed,0);
+        transform.Translate(0,this.speed*Time.deltaTime,0);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
