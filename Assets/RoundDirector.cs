@@ -28,7 +28,7 @@ public class RoundDirector : MonoBehaviour
 
     public void roundend()
     {
-        if(round < 2)
+        if(round < 15)
         {
             round++;
             StartCoroutine(RoundChange());

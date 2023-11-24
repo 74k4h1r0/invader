@@ -33,16 +33,16 @@ public class PlayerController : MonoBehaviour
         if(enemyDirector.enemyStart)
         {     
             //左右移動
-            if(Input.GetKey(KeyCode.RightArrow) && transform.position.x < 3.4f)
+            if((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && transform.position.x < 3.4f)
             {
                 transform.Translate(1*Time.deltaTime,0,0);
             }
-            if(Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -3.4f)
+            if((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && transform.position.x > -3.4f)
             {
                 transform.Translate(-1*Time.deltaTime,0,0);
             }
 
-            if (Input.GetKeyDown(KeyCode.Space)) //&& currentTime > span)
+            if (Input.GetKeyDown((KeyCode.Space)) && currentTime > span)
             {
                 audio.Play();
                 currentTime = 0f;
@@ -61,8 +61,3 @@ public class PlayerController : MonoBehaviour
     }
     
 }
-
-//SE,BGMをつける
-//終了画面・タイトル画面の実装
-//一時停止(可能であれば)
-//打った弾の数の集計
